@@ -3,10 +3,9 @@
 
 one:
   product: ruby
-  # order: one
-  cart: one
+  #cart: one
+  order: one
 
 two:
   product: ruby
-  # cart: one
   cart: two
