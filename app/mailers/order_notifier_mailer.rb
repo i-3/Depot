@@ -19,6 +19,7 @@ class OrderNotifierMailer < ApplicationMailer
   #
   def shipped(order)
     @order = order
+
     mail to: order.email, subject: 'Pragmatic Store Order Shipped'
   end
 end

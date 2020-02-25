@@ -6,8 +6,20 @@ class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
 
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical
+  # order.
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_as(user)
+		post login_url, params: { name: user.name, password: 'secret' }
+	end
+
+	def logout
+		delete logout_url
+	end
+
+	def setup
+		login_as users(:one) if defined? session
+	end
 end
