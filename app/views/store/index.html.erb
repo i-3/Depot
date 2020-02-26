@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1><%= t('.title_html') %></h1>
 <%= pluralize(session[:counter], 'visit') if session[:counter]>5 %>
 
 <% cache @products do %>
@@ -15,7 +15,8 @@
 					<span class="price">
 						<%= number_to_currency(product.price, unit: '€', format: '%n %u') %>
 						<!--<%= number_to_currency(product.price) %>-->
-						<%= button_to 'Add to Cart', line_items_path(product_id: product),
+						<%= button_to t('.add_html'),
+						line_items_path(product_id: product, locale: I18n.locale),
 								remote: true %>
 					</span>
 				</div>
