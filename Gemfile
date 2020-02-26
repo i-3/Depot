@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
 gem 'rb-readline'
 
+gem "nokogiri", '>= 1.10.8'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
