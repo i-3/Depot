@@ -29,7 +29,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
 gem 'rb-readline'
 
-gem "nokogiri", '>= 1.10.8'
+gem 'nokogiri', '>= 1.10.8'
+gem 'actionview', '>= 6.0.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,4 +61,5 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
