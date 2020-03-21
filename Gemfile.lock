@@ -283,6 +283,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
+  zeitwerk (>= 2.3.0)
 
 RUBY VERSION
    ruby 2.6.5p114

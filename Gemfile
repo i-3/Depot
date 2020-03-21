@@ -31,6 +31,7 @@ gem 'rb-readline'
 
 gem 'nokogiri', '>= 1.10.8'
 gem 'actionview', '>= 6.0.2.2'
+gem 'zeitwerk', '>= 2.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
