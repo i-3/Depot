@@ -60,3 +60,6 @@ server '158.101.161.91', user: 'kyb', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :default_env, { 'PASSENGER_INSTANCE_REGISTRY_DIR' =>
+										'/home/kyb/passenger_temp' }
