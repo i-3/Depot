@@ -43,3 +43,4 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 
 set :linked_files, %w{config/master.key}
+set :passenger_restart_with_touch, true
