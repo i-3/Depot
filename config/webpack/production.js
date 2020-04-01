@@ -4,9 +4,3 @@ const environment = require('./environment')
 
 module.exports = environment.toWebpackConfig()
 
-module.exports = {
-  //...
-  performance: {
-    maxEntrypointSize: 500000
-  }
-};
