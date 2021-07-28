@@ -16,5 +16,5 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-	inflect.irregular 'tax', 'taxes'
+  inflect.irregular 'tax', 'taxes'
 end
