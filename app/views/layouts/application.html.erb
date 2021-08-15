@@ -26,30 +26,7 @@
   <div id="columns">
     <div id="side">
       <br>
-      <div id="date" style="color:white"></div>
-
-      <script type="text/javascript">
-        function addZero(mustBeTwoDigit) {
-          if (mustBeTwoDigit < 10) {
-            mustBeTwoDigit='0'+mustBeTwoDigit;
-          }
-          return mustBeTwoDigit;
-        }
-        function formatDate() {
-          var newDate = new Date();
-          var onlyDay = addZero(newDate.getDate());
-          var onlyMonth = addZero(newDate.getMonth()+1);
-          var onlyYear = newDate.getFullYear();
-          var onlyHours = addZero(newDate.getHours());
-          var onlyMinutes = addZero(newDate.getMinutes());
-          var onlySeconds = addZero(newDate.getSeconds());
-
-          return onlyYear+"-"+onlyMonth+"-"+onlyDay+" "+onlyHours+":"+onlyMinutes+":"+onlySeconds;
-        }
-        setInterval(function () {
-          document.getElementById('date').innerHTML = formatDate();
-        }, 1000);
-      </script>
+      <div id="date" style="color:#bfb">1970-01-01 00:00:00</div>
 
       <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
@@ -58,10 +35,10 @@
       <% end %>
 
       <ul>
-        <li><a href="http://www...."><%= t('.home') %></a></li>
-        <li><a href="http://www..../faq"><%= t('.questions') %></a></li>
-        <li><a href="http://www..../news"><%= t('.news') %></a></li>
-        <li><a href="http://www..../contact"><%= t('.contact') %></a></li>
+        <li><a href="/"><%= t('.home') %></a></li>
+        <li><a href="/questions"><%= t('.questions') %></a></li>
+        <li><a href="/news"><%= t('.news') %></a></li>
+        <li><a href="/contact"><%= t('.contact') %></a></li>
       </ul>
 
       <% if session[:user_id] %>
@@ -75,12 +52,36 @@
         <%= button_to 'Logout', logout_path, method: :delete %>
       <% end %>
       <% unless session[:user_id] %>
-        <%= button_to 'Login as dave/secret', admin_path, method: :get %>
+        <%= button_to 'Login as dave / secret', admin_path, method: :get %>
       <% end %>
+
     </div>
     <div id="main">
       <%= yield %>
     </div>
+
+    <script type="text/javascript">
+      function addZero(mustBeTwoDigit) {
+        if (mustBeTwoDigit < 10) {
+          mustBeTwoDigit='0'+mustBeTwoDigit;
+        }
+        return mustBeTwoDigit;
+      }
+      function formatDate() {
+        var newDate = new Date();
+        var onlyDay = addZero(newDate.getDate());
+        var onlyMonth = addZero(newDate.getMonth()+1);
+        var onlyYear = newDate.getFullYear();
+        var onlyHours = addZero(newDate.getHours());
+        var onlyMinutes = addZero(newDate.getMinutes());
+        var onlySeconds = addZero(newDate.getSeconds());
+
+        return onlyYear+"-"+onlyMonth+"-"+onlyDay+" "+onlyHours+":"+onlyMinutes+":"+onlySeconds;
+      }
+      setInterval(function () {
+        document.getElementById('date').innerHTML = formatDate();
+      }, 1000);
+    </script>
   </div>
 </body>
 </html>
