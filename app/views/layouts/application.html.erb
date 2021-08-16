@@ -52,7 +52,7 @@
         <%= button_to 'Logout', logout_path, method: :delete %>
       <% end %>
       <% unless session[:user_id] %>
-        <%= button_to 'Login as dave / secret', admin_path, method: :get %>
+        <%= button_to 'Login as dave:secret', admin_path, method: :get %>
       <% end %>
 
     </div>
